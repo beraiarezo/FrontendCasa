@@ -9,7 +9,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
+    .product-animation {
+      width: 50%;
+      position: relative;
+      height: 105px;
+      .animation-wrapper {
+        display: block;
+        width: calc(100% + 100px);
+        height: 100%;
+        position: absolute;
+        left: -100px;
+      }
+    }
     .product-types {
+      width: 50%;
+      height: 105px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      .triangle-topright {
+        width: 0;
+        height: 0;
+        border-top: 105px solid #f8f8f8;
+        border-right: 105px solid transparent;
+        position: absolute;
+        right: -4px;
+        z-index: 1;
+      }
       h2 {
         margin: 0 0 10px 0;
         font-family: "Roboto", sans-serif;

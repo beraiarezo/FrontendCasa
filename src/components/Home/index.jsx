@@ -8,22 +8,29 @@ export const Home = () => {
         <div className="container">
           <div className="product-filter-section-wrapper">
             <div className="product-types">
-              <h2>Choose Organization type</h2>
-              <ul>
-                <li>
-                  <a href="">Fast loan</a>
-                </li>
-                <li>/</li>
-                <li>
-                  <a href="">Long term loan</a>
-                </li>
-              </ul>
+              <div className="triangle-topright"></div>
+              <div>
+                <h2>Choose Organization type</h2>
+                <ul>
+                  <li>
+                    <a href="">Fast loan</a>
+                  </li>
+                  <li>/</li>
+                  <li>
+                    <a href="">Long term loan</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="product-filter">
-              <select>
-                <option value="germany">Germany</option>
-                <option value="georgia">Georgia</option>
-              </select>
+            <div className="product-animation">
+              <div className="animation-wrapper">
+                <a
+                  href="http://f5447.site/vashagotivochka.ua/19001109673/29965"
+                  target="_blank"
+                >
+                  <img src="https://alfa.doaffiliate.net/banners/608/ua/vashagotivochka.ua_037098_640x200_ua.png" />
+                </a>{" "}
+              </div>
             </div>
           </div>
         </div>
