@@ -1,5 +1,7 @@
 import React from "react";
 import logo from "./icons/logo.png";
+import { Link } from "react-router-dom";
+
 import "./style.scss";
 export const Header = () => {
   return (
@@ -12,16 +14,13 @@ export const Header = () => {
           <div className="navigation">
             <ul>
               <li>
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="/">Organizations</a>
+                <Link to="/organization">Organizations</Link>
               </li>
               <li>
-                <a href="/">About us</a>
-              </li>
-              <li>
-                <a href="/">Contact</a>
+                <Link to="/about">About us</Link>
               </li>
             </ul>
           </div>
