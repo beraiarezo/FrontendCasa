@@ -1,0 +1,24 @@
+footer.main-footer {
+  display: flex;
+  background-color: #f9f9f9;
+  justify-content: center;
+  padding: 20px 0 10px 0;
+  .main-footer-wrapper {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    // align-items: center;
+  }
+  ul {
+    li {
+      position: relative;
+      color: #777777;
+      a {
+        position: relative;
+        color: #777777;
+        text-decoration: none;
+      }
+    }
+  }
+}

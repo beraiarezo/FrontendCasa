@@ -1,0 +1,28 @@
+header.main-header {
+  width: 100%;
+  display: flex;
+  height: 109px;
+  justify-content: center;
+  .header-layout {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navigation {
+    ul {
+      display: flex;
+      width: 350px;
+      justify-content: space-between;
+      li {
+        a {
+          font-family: "Roboto", sans-serif;
+          font-weight: lighter;
+          color: #000;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
