@@ -1,16 +1,17 @@
-.product-filter-section {
+.vertical-advert-section {
   display: flex;
   width: 100%;
   justify-content: center;
   height: 105px;
   background-color: #f8f8f8;
-  .product-filter-section-wrapper {
+  .vertical-advert-section-wrapper {
+    background-color: #007bff;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    .product-animation {
+    .vertical-advert-animation {
       width: 50%;
       position: relative;
       height: 105px;
@@ -22,16 +23,17 @@
         left: -100px;
       }
     }
-    .product-types {
+    .vertical-advert-text {
       width: 50%;
       height: 105px;
       position: relative;
       display: flex;
       align-items: center;
+      padding: 0 0 0 15px;
       .triangle-topright {
         width: 0;
         height: 0;
-        border-top: 105px solid #f8f8f8;
+        border-top: 105px solid #007bff;
         border-right: 105px solid transparent;
         position: absolute;
         right: -4px;
@@ -39,28 +41,26 @@
       }
       h2 {
         margin: 0 0 10px 0;
-        font-family: "Roboto", sans-serif;
-        font-weight: normal;
-        color: #222222;
+        font-family: "Titillium Web", sans-serif;
+        font-weight: bold;
+        color: #ffffff;
+        font-size: 18px;
+        width: 300px;
+        line-height: 25px;
+        text-transform: uppercase;
       }
-      ul {
-        display: flex;
-        li {
-          font-family: "Roboto", sans-serif;
-          font-weight: normal;
-          color: #6c757d;
-          text-decoration: none;
-          margin-right: 10px;
-          &:last-child {
-            margin-right: 0;
-          }
-          a {
-            font-family: "Roboto", sans-serif;
-            font-weight: normal;
-            color: #6c757d;
-            text-decoration: none;
-          }
-        }
+      a {
+        padding: 5px 7px;
+        width: 140px;
+        background-color: #ff4c3b;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 13px;
+        margin: 0;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
       }
     }
   }
