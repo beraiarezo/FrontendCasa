@@ -42,23 +42,27 @@ export const Home = () => {
                 </a>
               </div>
               <div className="product-description">
-                <p>
-                  company status: <span>active</span>
+                <h2 style={{ color: "#4588FF" }}>
+                  ONLINE CREDITS FOR WHAT YOU WANT
+                </h2>
+                <h3>Lineru</h3>
+                <p className="status">
+                  Company status: <span>Active</span>
                 </p>
                 <p>
-                  country: <span>Georgia</span>
+                  Country: <span>Georgia</span>
                 </p>
                 <p>
                   Category: <span>Finance</span>
                 </p>
-                <p>
+                <p className="ranking">
                   Rating: <span>9.0</span>
                 </p>
                 <p>
                   Interest : <span>(25% E.A.)</span>
                 </p>
+                <div className="product-details-btn">Detailed</div>
               </div>
-              <div className="product-details-btn">Detailed</div>
             </div>
           </div>
         </div>
