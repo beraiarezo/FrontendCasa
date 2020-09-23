@@ -81,6 +81,14 @@
       padding: 20px;
       background-color: #f8f8f8;
       border-radius: 5px;
+      a {
+        position: relative;
+        display: flex;
+        width: 100%;
+        padding: 0;
+        text-decoration: none;
+        cursor: initial;
+      }
       .product-image {
         margin: 0 20px 0 0;
       }
@@ -116,6 +124,10 @@
           margin-top: 0;
           margin-bottom: 10px;
           font-size: 24px;
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
         }
         h3 {
           margin-top: 0;
@@ -124,12 +136,13 @@
           color: #ca3535;
         }
         p {
+          padding: 0 0 0 5px;
           color: black;
           margin: 0 0 7px 0;
           font-family: "Roboto", sans-serif;
           padding: 0 0 5px 0;
           border-bottom: 1px solid #ccc;
-          &:nth-of-type(5) {
+          &:nth-of-type(6) {
             border-bottom: 0;
           }
           span {
@@ -140,6 +153,9 @@
           }
           &.status span {
             color: green;
+          }
+          &.name span {
+            color: rgb(69, 136, 255);
           }
         }
       }
