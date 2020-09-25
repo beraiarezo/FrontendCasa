@@ -31,7 +31,14 @@ export const Home = () => {
           </div>
         </div>
       </section>
-      <section className="filter-section">Choose country: "country"</section>
+      <section className="filter-section">
+        <div className="container">
+          <div className="filter-section-wrapper">
+            <div className="filter">Choose country: "country"</div>
+            <div className="filter">Choose country: "country"</div>
+          </div>
+        </div>
+      </section>
       <section className="products-view-section">
         <div className="container">
           <div className="products-view-wrapper">
