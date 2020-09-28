@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Dropdown from "shared/Dropdown";
+import Pagination from "shared/Pagination";
 import "./style.scss";
 
 export const Home = () => {
@@ -34,8 +35,12 @@ export const Home = () => {
       <section className="filter-section">
         <div className="container">
           <div className="filter-section-wrapper">
-            <div className="filter">Choose country: "country"</div>
-            <div className="filter">Choose country: "country"</div>
+            <div className="filter">
+              <Dropdown />
+            </div>
+            <div className="filter">
+              <Dropdown />
+            </div>
           </div>
         </div>
       </section>
@@ -43,43 +48,82 @@ export const Home = () => {
         <div className="container">
           <div className="products-view-wrapper">
             <div className="product">
-              <Link to="/">
-                <div className="product-image">
-                  <a
-                    href="http://f5447.site/vashagotivochka.ua/19001109673/39451"
-                    target="_blank"
-                  >
-                    <img src="https://alfa.doaffiliate.net/banners/608/ua/vashagotivochka.ua_f778b9_300x250_ua.png" />
-                  </a>
-                </div>
-                <div className="product-description">
-                  <h2 style={{ color: "#4588FF" }}>
-                    ONLINE CREDITS FOR WHAT YOU WANT
-                  </h2>
-                  <p className="name">
-                    Company name: <span>LINERU</span>
-                  </p>
-                  <p className="status">
-                    Company status: <span>Active</span>
-                  </p>
-                  <p>
-                    Country: <span>Georgia</span>
-                  </p>
-                  <p>
-                    Category: <span>Finance</span>
-                  </p>
-                  <p className="ranking">
-                    Rating: <span>9.0</span>
-                  </p>
-                  <p>
-                    Interest : <span>(25% E.A.)</span>
-                  </p>
-                  <div className="product-details-btn">GET MONEY</div>
-                </div>
-              </Link>
+              {/* <Link to="/"> */}
+              <div className="product-image">
+                <a
+                  href="http://f5447.site/vashagotivochka.ua/19001109673/39451"
+                  target="_blank"
+                >
+                  <img src="https://alfa.doaffiliate.net/banners/608/ua/vashagotivochka.ua_f778b9_300x250_ua.png" />
+                </a>
+              </div>
+              <div className="product-description">
+                <h2 style={{ color: "#4588FF" }}>
+                  ONLINE CREDITS FOR WHAT YOU WANT
+                </h2>
+                <p className="name">
+                  Company name: <span>LINERU</span>
+                </p>
+                <p className="status">
+                  Company status: <span>Active</span>
+                </p>
+                <p>
+                  Country: <span>Georgia</span>
+                </p>
+                <p>
+                  Category: <span>Finance</span>
+                </p>
+                <p className="ranking">
+                  Rating: <span>9.0</span>
+                </p>
+                <p>
+                  Interest : <span>(25% E.A.)</span>
+                </p>
+                <div className="product-details-btn">GET MONEY</div>
+              </div>
+              {/* </Link> */}
+            </div>
+            <div className="product">
+              {/* <Link to="/"> */}
+              <div className="product-image">
+                <a
+                  href="http://f5447.site/vashagotivochka.ua/19001109673/39451"
+                  target="_blank"
+                >
+                  <img src="https://alfa.doaffiliate.net/banners/608/ua/vashagotivochka.ua_f778b9_300x250_ua.png" />
+                </a>
+              </div>
+              <div className="product-description">
+                <h2 style={{ color: "#4588FF" }}>
+                  ONLINE CREDITS FOR WHAT YOU WANT
+                </h2>
+                <p className="name">
+                  Company name: <span>LINERU</span>
+                </p>
+                <p className="status">
+                  Company status: <span>Active</span>
+                </p>
+                <p>
+                  Country: <span>Georgia</span>
+                </p>
+                <p>
+                  Category: <span>Finance</span>
+                </p>
+                <p className="ranking">
+                  Rating: <span>9.0</span>
+                </p>
+                <p>
+                  Interest : <span>(25% E.A.)</span>
+                </p>
+                <div className="product-details-btn">GET MONEY</div>
+              </div>
+              {/* </Link> */}
             </div>
           </div>
         </div>
+      </section>
+      <section className="pagination-section">
+        <Pagination />
       </section>
     </>
   );

@@ -1,0 +1,32 @@
+.Pagination {
+  display: flex;
+  height: 53px;
+  width: 100%;
+  justify-content: center;
+  margin: 50px 0;
+  .paginaton-wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ff4c3b;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #ff4c3b;
+    cursor: POINTER;
+    &:hover {
+      background-position: 100%;
+      color: #000000;
+      background-color: #ffffff;
+      .load-more {
+        color: #000000;
+      }
+    }
+    .load-more {
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+}
