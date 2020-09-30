@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className="main-footer">
       <div className="container">
         <div className="main-footer-wrapper">
-          <div className="footer-about-section">
+          <div className="footer-about-sidebar">
             <div>
               <img src={logo} alt="logo" />
               <p>

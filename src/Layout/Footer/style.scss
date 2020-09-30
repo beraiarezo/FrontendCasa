@@ -8,7 +8,13 @@ footer.main-footer {
     width: 100%;
     flex-wrap: nowrap;
     justify-content: space-between;
+    h5 {
+      margin: 10px 0;
+    }
     // align-items: center;
+    .footer-about-sidebar {
+      width: 35%;
+    }
   }
   ul {
     li {
