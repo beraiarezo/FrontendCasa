@@ -10,6 +10,7 @@ footer.main-footer {
     justify-content: space-between;
     h5 {
       margin: 10px 0;
+      font-family: "Roboto", sans-serif;
     }
     // align-items: center;
     .footer-about-sidebar {
@@ -20,6 +21,23 @@ footer.main-footer {
     li {
       position: relative;
       color: #777777;
+      font-family: "Titillium Web", sans-serif;
+
+      a {
+        font-family: "Titillium Web", sans-serif;
+      }
+      &.sn-f a:hover {
+        color: #4267b2;
+      }
+
+      &.sn-i a:hover {
+        color: #c13584;
+      }
+
+      &.sn-t a:hover {
+        color: #1da1f2;
+      }
+
       a {
         position: relative;
         color: #777777;
