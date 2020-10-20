@@ -2,7 +2,7 @@ import React from "react";
 import "./style.scss";
 import { withRouter } from "react-router";
 
-const Organization = (props) => {
+const Favorites = (props) => {
   console.log(props, "props");
   return (
     <div>
@@ -11,4 +11,4 @@ const Organization = (props) => {
   );
 };
 
-export default withRouter(Organization);
+export default withRouter(Favorites);

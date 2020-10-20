@@ -1,130 +1,94 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "shared/Dropdown";
 import Pagination from "shared/Pagination";
+import BookService from "services/BookService";
 import "./style.scss";
+import { connect } from "react-redux";
+import { addToFavorite } from "../../actions";
+const Home = (props) => {
+  console.log(props, "home props");
+  const [books, setBooks] = useState([]);
+  const [pageIndex, setPageIndex] = useState(0);
 
-export const Home = () => {
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
+  const fetchBooks = () => {
+    BookService.getBooks(pageIndex)
+      .then(function (response) {
+        let nextBooks = [...books, ...response.data.items];
+        setBooks(nextBooks);
+        setPageIndex(pageIndex + 10);
+      })
+      .catch(function (error) {
+        console.log(error, "error web api");
+      });
+  };
+
+  const fetchMore = () => {
+    fetchBooks();
+  };
+  console.log(books, "books, ");
   return (
     <>
-      <section className="vertical-advert-section">
-        <div className="container">
-          <div className="vertical-advert-section-wrapper">
-            <div className="vertical-advert-text">
-              <div className="triangle-topright"></div>
-              <div>
-                <h2>
-                  Fulfill your desires in full. Get the money in 5 minutes
-                </h2>
-                <a href="">Apply for a loan</a>
-              </div>
-            </div>
-            <div className="vertical-advert-animation">
-              <div className="animation-wrapper">
-                <a
-                  href="http://f5447.site/vashagotivochka.ua/19001109673/29965"
-                  target="_blank"
-                >
-                  <img src="https://alfa.doaffiliate.net/banners/608/ua/vashagotivochka.ua_037098_640x200_ua.png" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="filter-section">
-        <div className="container">
-          <div className="filter-section-wrapper">
-            <div className="filter">
-              <Dropdown />
-            </div>
-            <div className="filter">
-              <Dropdown />
-            </div>
-          </div>
-        </div>
-      </section>
       <section className="products-view-section">
         <div className="container">
           <div className="products-view-wrapper">
-            <div className="product">
-              {/* <Link to="/"> */}
-              <div className="product-image">
-                <a
-                  href="http://f5447.site/vashagotivochka.ua/19001109673/39451"
-                  target="_blank"
-                >
-                  <img src="https://alfa.doaffiliate.net/banners/608/ua/vashagotivochka.ua_f778b9_300x250_ua.png" />
-                </a>
-              </div>
-              <div className="product-description">
-                <h2 style={{ color: "#4588FF" }}>
-                  ONLINE CREDITS FOR WHAT YOU WANT
-                </h2>
-                <p className="name">
-                  Company name: <span>LINERU</span>
-                </p>
-                <p className="status">
-                  Company status: <span>Active</span>
-                </p>
-                <p>
-                  Country: <span>Georgia</span>
-                </p>
-                <p>
-                  Category: <span>Finance</span>
-                </p>
-                <p className="ranking">
-                  Rating: <span>9.0</span>
-                </p>
-                <p>
-                  Interest : <span>(25% E.A.)</span>
-                </p>
-                <div className="product-details-btn">GET MONEY</div>
-              </div>
-              {/* </Link> */}
-            </div>
-            <div className="product">
-              {/* <Link to="/"> */}
-              <div className="product-image">
-                <a
-                  href="http://f5447.site/vashagotivochka.ua/19001109673/39451"
-                  target="_blank"
-                >
-                  <img src="https://alfa.doaffiliate.net/banners/608/ua/vashagotivochka.ua_f778b9_300x250_ua.png" />
-                </a>
-              </div>
-              <div className="product-description">
-                <h2 style={{ color: "#4588FF" }}>
-                  ONLINE CREDITS FOR WHAT YOU WANT
-                </h2>
-                <p className="name">
-                  Company name: <span>LINERU</span>
-                </p>
-                <p className="status">
-                  Company status: <span>Active</span>
-                </p>
-                <p>
-                  Country: <span>Georgia</span>
-                </p>
-                <p>
-                  Category: <span>Finance</span>
-                </p>
-                <p className="ranking">
-                  Rating: <span>9.0</span>
-                </p>
-                <p>
-                  Interest : <span>(25% E.A.)</span>
-                </p>
-                <div className="product-details-btn">GET MONEY</div>
-              </div>
-              {/* </Link> */}
-            </div>
+            {books.map((book, index) => {
+              return (
+                <div className="product" key={index}>
+                  <div className="product-image">
+                    <a href={`/book/${book.id}`}>
+                      <img
+                        src={
+                          book.volumeInfo.imageLinks
+                            ? book.volumeInfo.imageLinks.thumbnail
+                            : ""
+                        }
+                        alt={book.description}
+                      />
+                    </a>
+                  </div>
+                  <div className="product-description">
+                    <h2 style={{ color: "#4588FF" }}>
+                      {book.volumeInfo.title}
+                    </h2>
+                    <p> {book.volumeInfo.description}</p>
+                    <div
+                      className="favorite"
+                      onClick={() => props.addToFavorite()}
+                    >
+                      favorite
+                    </div>
+                    <div className="product-details-btn">Details</div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
       <section className="pagination-section">
-        <Pagination />
+        <Pagination loadMore={fetchMore} />
       </section>
     </>
   );
 };
+
+const mapStateToProps = (state, ownProps) => ({
+  active: state,
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  addToFavorite: () => {
+    console.log(ownProps, "ownprops");
+    dispatch(addToFavorite(ownProps));
+  },
+  removeFromFavorite: () => {
+    console.log("remove from favorite");
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
