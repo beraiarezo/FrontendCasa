@@ -1,36 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import Dropdown from "shared/Dropdown";
+import { connect } from "react-redux";
 import Pagination from "shared/Pagination";
 import BookService from "services/BookService";
+import { addToFavorite, removeFromFavorite } from "actions";
 import "./style.scss";
-import { connect } from "react-redux";
-import { addToFavorite } from "../../actions";
+
 const Home = (props) => {
-  console.log(props, "home props");
   const [books, setBooks] = useState([]);
   const [pageIndex, setPageIndex] = useState(0);
-
-  useEffect(() => {
-    fetchBooks();
-  }, []);
-
-  const fetchBooks = () => {
+  const [loader, setLoader] = useState(false);
+  const fetchBooks = useCallback(() => {
+    setLoader(true);
     BookService.getBooks(pageIndex)
       .then(function (response) {
-        let nextBooks = [...books, ...response.data.items];
-        setBooks(nextBooks);
+        setBooks([...books, ...response.data.items]);
         setPageIndex(pageIndex + 10);
+        setLoader(false);
       })
       .catch(function (error) {
-        console.log(error, "error web api");
+        console.log(error, "service error");
       });
-  };
+  }, [books, pageIndex]);
+
+  useEffect(() => {
+    return fetchBooks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const fetchMore = () => {
     fetchBooks();
   };
-  console.log(books, "books, ");
+
   return (
     <>
       <section className="products-view-section">
@@ -40,7 +41,7 @@ const Home = (props) => {
               return (
                 <div className="product" key={index}>
                   <div className="product-image">
-                    <a href={`/book/${book.id}`}>
+                    <Link to={`/book/${book.id}`}>
                       <img
                         src={
                           book.volumeInfo.imageLinks
@@ -49,20 +50,49 @@ const Home = (props) => {
                         }
                         alt={book.description}
                       />
-                    </a>
+                    </Link>
                   </div>
                   <div className="product-description">
-                    <h2 style={{ color: "#4588FF" }}>
-                      {book.volumeInfo.title}
-                    </h2>
+                    <h2>{book.volumeInfo.title}</h2>
+                    {book.volumeInfo.authors ? (
+                      <>
+                        <h4>by</h4>
+                        <h3>
+                          {book.volumeInfo.authors
+                            ? book.volumeInfo.authors.map((author, index) =>
+                                book.volumeInfo.authors.length < 2 ||
+                                book.volumeInfo.authors.length === index + 1
+                                  ? `${author}`
+                                  : `${author}, `
+                              )
+                            : ""}
+                        </h3>
+                      </>
+                    ) : (
+                      <p>{book.volumeInfo.subtitle}</p>
+                    )}
                     <p> {book.volumeInfo.description}</p>
-                    <div
-                      className="favorite"
-                      onClick={() => props.addToFavorite()}
+                    {props.favorites.some((fav) => fav.id === book.id) ? (
+                      <div
+                        className="favorite"
+                        onClick={() => props.removeFromFavorite(book.id)}
+                      >
+                        remove from favorite
+                      </div>
+                    ) : (
+                      <div
+                        className="favorite"
+                        onClick={() => props.addToFavorite(book)}
+                      >
+                        add to favorite
+                      </div>
+                    )}
+                    <Link
+                      to={`/book/${book.id}`}
+                      className="product-details-btn"
                     >
-                      favorite
-                    </div>
-                    <div className="product-details-btn">Details</div>
+                      Details
+                    </Link>
                   </div>
                 </div>
               );
@@ -71,23 +101,22 @@ const Home = (props) => {
         </div>
       </section>
       <section className="pagination-section">
-        <Pagination loadMore={fetchMore} />
+        <Pagination loadMore={fetchMore} loader={loader} />
       </section>
     </>
   );
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  active: state,
+const mapStateToProps = (state) => ({
+  favorites: state.favorites,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  addToFavorite: () => {
-    console.log(ownProps, "ownprops");
-    dispatch(addToFavorite(ownProps));
+const mapDispatchToProps = (dispatch) => ({
+  addToFavorite: (book) => {
+    dispatch(addToFavorite(book));
   },
-  removeFromFavorite: () => {
-    console.log("remove from favorite");
+  removeFromFavorite: (bookId) => {
+    dispatch(removeFromFavorite(bookId));
   },
 });
 

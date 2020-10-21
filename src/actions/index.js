@@ -1,14 +1,9 @@
-let nextTodoId = 0;
-export const addToFavorite = (text) => {
-  console.log(text);
-  return {
-    type: "ADD_TO_FAVORITE",
-    id: nextTodoId++,
-    text,
-  };
-};
+export const addToFavorite = (book) => ({
+  type: "ADD_TO_FAVORITE",
+  book,
+});
 
-export const removeFromFavorite = (filter) => ({
+export const removeFromFavorite = (bookId) => ({
   type: "REMOVE_FROM_FAVORITE",
-  filter,
+  bookId,
 });

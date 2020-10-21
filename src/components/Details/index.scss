@@ -1,0 +1,86 @@
+.produc-detail-wrapper {
+  margin: 120px 0 0 25px;
+  display: flex;
+  justify-content: center;
+  min-height: 500px;
+  .product-header {
+    display: flex;
+    .product-description {
+      width: 75%;
+      margin-left: 5%;
+      h2 {
+        color: #3498db;
+        font-family: "Titillium Web", sans-serif;
+        margin: 0;
+        font-size: 24px;
+        line-height: 24px;
+      }
+
+      h3 {
+        font-family: "Titillium Web", sans-serif;
+        margin: 4px 0;
+        font-size: 18px;
+        color: #ca3535;
+      }
+      p {
+        margin: 4px 0;
+        font-family: "Titillium Web", sans-serif;
+        font-size: 15px;
+        color: #888;
+      }
+    }
+  }
+  .anotation {
+    position: relative;
+    p {
+      padding: 5px;
+      width: 115px;
+      text-align: center;
+      background-color: #3498db;
+      z-index: 99999;
+      position: relative;
+      margin-left: 10px;
+      color: #fff;
+      font-size: 16px;
+      font-family: "Titillium Web", sans-serif;
+      border-radius: 3px;
+    }
+    &::after {
+      content: " ";
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 1px;
+      background-color: #888;
+      transform: translate(0, -50%);
+      z-index: 2;
+    }
+  }
+  .favorite {
+    transition: all 0.15s ease-in;
+    padding: 0 7px;
+    background-color: orange;
+    color: #fff;
+    line-height: 30px;
+    height: 30px;
+    text-align: center;
+    font-family: "Titillium Web", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 135px;
+    &:hover {
+      color: orange;
+      background-color: #ece6e6;
+      text-decoration: underline;
+    }
+  }
+  .book-description-wrapper {
+    color: #333;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.4;
+  }
+}

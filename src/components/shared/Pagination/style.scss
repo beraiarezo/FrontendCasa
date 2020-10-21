@@ -15,8 +15,14 @@
     color: #fff;
     background-color: #ff4c3b;
     cursor: POINTER;
+
+    &.loading {
+      background-image: url("../../../assets/icons/loader.svg");
+      background-size: 35px;
+      background-repeat: no-repeat;
+      background-position: 98%;
+    }
     &:hover {
-      background-position: 100%;
       color: #000000;
       background-color: #ffffff;
       .load-more {

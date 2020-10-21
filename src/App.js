@@ -1,9 +1,8 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore } from "redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Layout } from "./Layout";
-import thunk from "redux-thunk";
 import todos from "./reducers/index";
 import "./App.css";
 

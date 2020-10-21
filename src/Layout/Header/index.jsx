@@ -1,23 +1,27 @@
 import React from "react";
 import logo from "./icons/logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-import "./style.scss";
+import style from "./style.module.scss";
 export const Header = () => {
   return (
-    <header className="main-header">
+    <header className={style.mainHeader}>
       <div className="container">
-        <div className="header-layout">
+        <div className={style.headerLayout}>
           <div className="logo">
             <img src={logo} alt="logo" />
           </div>
-          <div className="navigation">
+          <div className={style.navigation}>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <NavLink to="/" exact activeClassName={style.isActive}>
+                  Home
+                </NavLink>
               </li>
               <li>
-                <Link to="/favorites">Favorites</Link>
+                <NavLink to="/favorites" activeClassName={style.isActive}>
+                  Favorites
+                </NavLink>
               </li>
             </ul>
           </div>

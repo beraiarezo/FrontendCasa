@@ -93,7 +93,7 @@
 .products-view-section {
   display: flex;
   justify-content: center;
-  margin: 25px 0;
+  margin: 120px 0 25px 0;
   .products-view-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -122,7 +122,7 @@
       }
       .product-details-btn {
         &:hover {
-          color: #4588ff;
+          color: #3498db;
           background-color: #fff;
           text-decoration: underline;
         }
@@ -130,61 +130,74 @@
         position: absolute;
         right: 0;
         bottom: 0;
-        width: 100%;
-        background-color: #4588ff;
+        width: 100px;
+        background-color: #3498db;
         color: #fff;
-        line-height: 40px;
-        height: 40px;
+        line-height: 30px;
+        height: 30px;
+        justify-content: center;
+        font-family: "Titillium Web", sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 11px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      .favorite {
+        &:hover {
+          color: orange;
+          background-color: #ece6e6;
+          text-decoration: underline;
+        }
+        transition: all 0.15s ease-in;
+        padding: 0 7px;
+        background-color: orange;
+        color: #fff;
+        line-height: 30px;
+        height: 30px;
         text-align: center;
         font-family: "Titillium Web", sans-serif;
         text-transform: uppercase;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 11px;
         cursor: pointer;
         border-radius: 4px;
+        width: 135px;
+        position: absolute;
+        bottom: 0;
+        right: 110px;
       }
       .product-description {
         position: relative;
         padding: 0 0 40px 0;
+        width: 100%;
         h2 {
-          color: rgb(69, 136, 255);
+          color: #3498db;
           font-family: "Titillium Web", sans-serif;
-          margin-top: 0;
-          margin-bottom: 10px;
+          margin: 0;
           font-size: 24px;
-          cursor: pointer;
-          &:hover {
-            text-decoration: underline;
-          }
+          line-height: 24px;
         }
         h3 {
-          margin-top: 0;
-          margin-bottom: 10px;
+          font-family: "Titillium Web", sans-serif;
+          margin: 0;
           font-size: 18px;
           color: #ca3535;
         }
+        h4 {
+          font-family: "Titillium Web", sans-serif;
+          margin: 0;
+          font-size: 18px;
+          color: #888;
+        }
         p {
-          padding: 0 0 0 5px;
-          color: black;
+          color: #888;
           margin: 0 0 7px 0;
           font-family: "Roboto", sans-serif;
-          padding: 0 0 5px 0;
-          border-bottom: 1px solid #ccc;
-          &:nth-of-type(6) {
-            border-bottom: 0;
-          }
-          span {
-            color: #736c6c;
-          }
-          &.ranking span {
-            color: orange;
-          }
-          &.status span {
-            color: green;
-          }
-          &.name span {
-            color: rgb(69, 136, 255);
-          }
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
       }
     }

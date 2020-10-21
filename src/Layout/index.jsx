@@ -7,7 +7,6 @@ import Favorites from "../components/Favorites";
 import Details from "../components/Details";
 // import ErrorBoundary from "shared/ErrorBoundary"
 export const Layout = () => {
-  console.log("slug");
   return (
     <>
       {/* <ErrorBoundary> */}

@@ -1,6 +1,7 @@
 import React from "react";
-import "./style.scss";
+import { Link } from "react-router-dom";
 import logo from "./icons/logo.png";
+import "./style.scss";
 export const Footer = () => {
   return (
     <footer className="main-footer">
@@ -9,24 +10,17 @@ export const Footer = () => {
           <div className="footer-about-sidebar">
             <div>
               <img src={logo} alt="logo" />
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam,
-              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </div>
           <div className="footer-sitemap-section">
             <h5>Sitemap</h5>
             <ul>
               <li>
-                <a href="">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="">Organizations</a>
-              </li>
-              <li>
-                <a href="">About</a>
+                <Link to="/favorites">Favorites</Link>
               </li>
             </ul>
           </div>
@@ -41,13 +35,34 @@ export const Footer = () => {
             <h5>Find us</h5>
             <ul>
               <li className="sn-f">
-                <a href="">Facebook</a>
+                <a
+                  href="https://www.facebook.com/"
+                  alt="facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Facebook
+                </a>
               </li>
               <li className="sn-i">
-                <a href="">Instagram</a>
+                <a
+                  href="https://instagram.com/"
+                  alt="Instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
               </li>
               <li className="sn-t">
-                <a href="">Twitter</a>
+                <a
+                  href="https://twitter.com"
+                  alt="Twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Twitter
+                </a>
               </li>
             </ul>
           </div>
