@@ -98,7 +98,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    min-height: 500px;
+    min-height: 73vh;
     .product {
       position: relative;
       display: flex;
@@ -146,28 +146,26 @@
         border-radius: 4px;
       }
       .favorite {
+        background: url("../../assets/icons/star.svg") no-repeat center;
+        background-size: 25px;
         &:hover {
-          color: orange;
-          background-color: #ece6e6;
-          text-decoration: underline;
+          background: url("../../assets/icons/starHover.svg") no-repeat center;
+          background-size: 25px;
+        }
+        &.selected {
+          background: url("../../assets/icons/starSelected.svg") no-repeat
+            center;
+          background-size: 25px;
         }
         transition: all 0.15s ease-in;
-        padding: 0 7px;
-        background-color: orange;
         color: #fff;
-        line-height: 30px;
+
         height: 30px;
-        text-align: center;
-        font-family: "Titillium Web", sans-serif;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 11px;
         cursor: pointer;
-        border-radius: 4px;
-        width: 135px;
+        width: 30px;
         position: absolute;
-        bottom: 0;
-        right: 110px;
+        top: 0;
+        right: 0;
       }
       .product-description {
         position: relative;
@@ -175,7 +173,7 @@
         width: 100%;
         h2 {
           color: #3498db;
-
+          width: 90%;
           margin: 0;
           font-size: 24px;
           line-height: 24px;

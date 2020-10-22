@@ -2,7 +2,7 @@
   margin: 120px 0 0 25px;
   display: flex;
   justify-content: center;
-  min-height: 500px;
+  min-height: 73vh;
   .product {
     width: 100%;
   }
@@ -40,7 +40,7 @@
       width: 115px;
       text-align: center;
       background-color: #3498db;
-      z-index: 99999;
+      z-index: 2;
       position: relative;
       margin-left: 10px;
       color: #fff;
@@ -57,29 +57,29 @@
       height: 1px;
       background-color: #888;
       transform: translate(0, -50%);
-      z-index: 2;
+      z-index: 1;
     }
   }
   .favorite {
-    transition: all 0.15s ease-in;
-    padding: 0 7px;
-    background-color: orange;
-    color: #fff;
-    line-height: 30px;
-    height: 30px;
-    text-align: center;
-    font-family: "Titillium Web", sans-serif;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 11px;
-    cursor: pointer;
-    border-radius: 4px;
-    width: 135px;
+    background: url("../../assets/icons/star.svg") no-repeat center;
+    background-size: 25px;
     &:hover {
-      color: orange;
-      background-color: #ece6e6;
-      text-decoration: underline;
+      background: url("../../assets/icons/starHover.svg") no-repeat center;
+      background-size: 25px;
     }
+    &.selected {
+      background: url("../../assets/icons/starSelected.svg") no-repeat center;
+      background-size: 25px;
+    }
+    transition: all 0.15s ease-in;
+    color: #fff;
+
+    height: 30px;
+    cursor: pointer;
+    width: 30px;
+    position: relative;
+    top: 0;
+    right: 0;
   }
   .book-description-wrapper {
     color: #333;

@@ -5,6 +5,7 @@
   justify-content: center;
   margin: 25px 0;
   .paginaton-wrapper {
+    transition: all 0.15s linear;
     display: flex;
     height: 100%;
     width: 100%;
@@ -15,18 +16,17 @@
     color: #fff;
     background-color: #ff4c3b;
     cursor: POINTER;
-
+    background-position: 98%;
     &.loading {
       background-image: url("../../../assets/icons/loader.svg");
       background-size: 35px;
       background-repeat: no-repeat;
-      background-position: 98%;
     }
     &:hover {
-      color: #000000;
+      color: #888;
       background-color: #ffffff;
       .load-more {
-        color: #000000;
+        color: #888;
       }
     }
     .load-more {

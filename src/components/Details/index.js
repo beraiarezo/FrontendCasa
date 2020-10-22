@@ -90,18 +90,14 @@ const Details = (props) => {
                 </p>
                 {props.favorites.some((fav) => fav.id === book.id) ? (
                   <Button
-                    className="favorite"
+                    className="favorite selected"
                     action={() => props.removeFromFavorite(book.id)}
-                  >
-                    remove from favorite
-                  </Button>
+                  />
                 ) : (
                   <Button
                     className="favorite"
                     action={() => props.addToFavorite(book)}
-                  >
-                    add to favorite
-                  </Button>
+                  />
                 )}
               </div>
             </div>
