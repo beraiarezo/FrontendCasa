@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import BookService from "services/BookService";
 import { addToFavorite, removeFromFavorite } from "actions";
+import Button from "shared/Button";
 import "./index.scss";
 const Details = (props) => {
   const [book, setBook] = useState();
@@ -88,19 +89,19 @@ const Details = (props) => {
                   )}
                 </p>
                 {props.favorites.some((fav) => fav.id === book.id) ? (
-                  <div
+                  <Button
                     className="favorite"
-                    onClick={() => props.removeFromFavorite(book.id)}
+                    action={() => props.removeFromFavorite(book.id)}
                   >
                     remove from favorite
-                  </div>
+                  </Button>
                 ) : (
-                  <div
+                  <Button
                     className="favorite"
-                    onClick={() => props.addToFavorite(book)}
+                    action={() => props.addToFavorite(book)}
                   >
                     add to favorite
-                  </div>
+                  </Button>
                 )}
               </div>
             </div>

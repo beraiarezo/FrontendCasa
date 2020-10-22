@@ -98,14 +98,16 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    min-height: 500px;
     .product {
       position: relative;
       display: flex;
       width: 100%;
       padding: 20px;
-      background-color: #f8f8f8;
+      background-color: #f4f2e9;
       border-radius: 5px;
       margin: 0 0 20px 0;
+      height: max-content;
       &:last-child {
         margin: 0;
       }
@@ -173,19 +175,17 @@
         width: 100%;
         h2 {
           color: #3498db;
-          font-family: "Titillium Web", sans-serif;
+
           margin: 0;
           font-size: 24px;
           line-height: 24px;
         }
         h3 {
-          font-family: "Titillium Web", sans-serif;
           margin: 0;
           font-size: 18px;
           color: #ca3535;
         }
         h4 {
-          font-family: "Titillium Web", sans-serif;
           margin: 0;
           font-size: 18px;
           color: #888;
@@ -193,7 +193,6 @@
         p {
           color: #888;
           margin: 0 0 7px 0;
-          font-family: "Roboto", sans-serif;
           display: -webkit-box;
           -webkit-line-clamp: 3;
           -webkit-box-orient: vertical;

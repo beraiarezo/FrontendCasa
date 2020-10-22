@@ -3,6 +3,9 @@
   display: flex;
   justify-content: center;
   min-height: 500px;
+  .product {
+    width: 100%;
+  }
   .product-header {
     display: flex;
     .product-description {
@@ -81,6 +84,7 @@
   .book-description-wrapper {
     color: #333;
     font-family: "Roboto", sans-serif;
-    line-height: 1.4;
+    line-height: 1.5;
+    font-size: 14px;
   }
 }

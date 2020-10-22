@@ -3,12 +3,12 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Layout } from "./Layout";
-import todos from "./reducers/index";
+import favorites from "./reducers/index";
 import "./App.css";
 
 // const store = createStore(todos, applyMiddleware(thunk));
 const store = createStore(
-  todos,
+  favorites,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

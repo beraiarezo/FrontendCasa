@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./icons/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import style from "./style.module.scss";
 export const Header = () => {
@@ -9,7 +9,9 @@ export const Header = () => {
       <div className="container">
         <div className={style.headerLayout}>
           <div className="logo">
-            <img src={logo} alt="logo" />
+            <Link to="/">
+              <img src={logo} alt="logo" />
+            </Link>
           </div>
           <div className={style.navigation}>
             <ul>

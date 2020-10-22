@@ -34,3 +34,13 @@ ul {
   padding: 0;
   display: flex;
 }
+
+h2,
+h3,
+h4 {
+  font-family: "Titillium Web", sans-serif;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}

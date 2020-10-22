@@ -9,7 +9,9 @@ export const Footer = () => {
         <div className="main-footer-wrapper">
           <div className="footer-about-sidebar">
             <div>
-              <img src={logo} alt="logo" />
+              <Link to="/">
+                <img src={logo} alt="logo" />
+              </Link>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </div>
