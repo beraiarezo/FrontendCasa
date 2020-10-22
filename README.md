@@ -1,5 +1,3 @@
-# FrontendCasa
-
 # Start project
 
 ## npm install
